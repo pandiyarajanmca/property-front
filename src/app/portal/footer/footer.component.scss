@@ -1,0 +1,100 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+
+.footer_container {
+  .footer_popular_search {
+    border-bottom: 2px solid #f2f2f2;
+    padding-bottom: 20px;
+    h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-family: "D-DIN";
+      color: $primary-color;
+      @include device-xs {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      float: left;
+      @include device-xs {
+        text-align: center;
+      }
+      li {
+        width: 50%;
+        float: left;
+        margin-bottom: 10px;
+        @include device-sm {
+          width: 100%;
+        }
+        a {
+          font-size: 14px;
+          font-family: "D-DIN";
+          color: $perp;
+          text-decoration: none;
+          position: relative;
+          @include transition(all 0.3s ease-in);
+          display: inline-block;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: -3px;
+            left: 0;
+            background: darken($primary-color, 10%);
+            visibility: hidden;
+            border-radius: 5px;
+            @include transform(scaleX(0));
+            @include transition(0.25s linear);
+          }
+          &:hover {
+            color: $primary-color;
+            @include transition(all 0.2s ease-in-out);
+            &::before {
+              visibility: visible;
+              @include transform(scaleX(1));
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer_menu {
+    border-bottom: none !important;
+    @extend .footer_popular_search;
+    li {
+      width: 100% !important;
+      float: left !important;
+    }
+    .footer-logo {
+      @include device-sm {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      img {
+      }
+    }
+    .app_stor {
+      @include device-sm {
+        text-align: center;
+      }
+      img {
+        width: 130px;
+        // height: 50px;
+        margin: auto;
+        text-align: center;
+        padding-bottom: 15px;
+        @include device-sm {
+          padding-bottom: 0;
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+}

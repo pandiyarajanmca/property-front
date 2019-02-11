@@ -1,0 +1,85 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+.main-sec {
+  background-image: url(/assets/images/banners/banner-buy.jpg);
+  height: 350px;
+  background-size: cover;
+  position: relative;
+}
+.sell-sec {
+  .leftside-links {
+    background: $primary-color;
+    float: left;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 1px 1px 13px 1px rgba(0, 0, 0, 0.17);
+    position: relative;
+    top: -60px;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      float: left;
+      width: 100%;
+      li {
+        display: block;
+        padding: 20px 0;
+        margin: 0 25px;
+        a {
+          img {
+            height: 18px;
+            margin-right: 6px;
+          }
+          span {
+            color: $white;
+            font-size: $f-16;
+            position: relative;
+            top: 2px;
+          }
+        }
+        &:first-child {
+          border-bottom: 1px solid #f4fafb;
+        }
+        &:last-child {
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
+  }
+
+  .wallet_info_blk {
+    .wallet_title {
+      color: $primary-color;
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+  }
+  .form-group {
+    label {
+      font-size: 16px;
+    }
+    select {
+      background-image: url("/assets/images/down-arrow -gray.svg") !important;
+      background-position: right 12px center;
+      // width: 200px;
+      &.form-control[multiple] {
+        height: 120px;
+        background: transparent !important;
+      }
+    }
+    .avb_bok {
+      display: block;
+      padding: 8px 3px;
+      font-size: 14px;
+      border-radius: 5px;
+      text-align: left;
+  }
+  .usd_amt{
+    font-size: 14px;
+    color: $perp;
+  }
+  }
+  .common_btn {
+    padding: 0 35px;line-height: 36px;
+  }
+}

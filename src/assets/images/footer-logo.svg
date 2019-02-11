@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="121.5" height="29.744" viewBox="0 0 121.5 29.744">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #3aaab6;
+      }
+
+      .cls-1 {
+        font-size: 17px;
+        font-family: MontserratAlternates-SemiBold, Montserrat Alternates;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+  <g id="Group_216" data-name="Group 216" transform="translate(-162.311 -324.403)">
+    <text id="Propertyze" class="cls-1" transform="translate(185.812 348.932)"><tspan x="0" y="0">Propertyze</tspan></text>
+    <g id="Group_31" data-name="Group 31" transform="translate(169.122 332.776)">
+      <g id="Group_30" data-name="Group 30" transform="translate(0 0)">
+        <path id="Path_86" data-name="Path 86" class="cls-2" d="M186.271,354.489H172.653v-21.37l13.618,8.451Zm-11.995-1.881h10.09a.28.28,0,0,0,.281-.28v-8.956a.49.49,0,0,0-.232-.417l-10.139-6.292Z" transform="translate(-172.653 -333.119)"/>
+      </g>
+    </g>
+    <path id="Path_87" data-name="Path 87" class="cls-2" d="M162.312,328.854v12.919h4.324v-1.881h-2.42a.28.28,0,0,1-.281-.281v-8.956a.49.49,0,0,1,.232-.417l10.139-6.292v15.945h-5.185v1.881h6.809V320.4Z" transform="translate(0 4)"/>
+  </g>
+</svg>

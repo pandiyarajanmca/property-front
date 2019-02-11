@@ -1,0 +1,87 @@
+.label-top {
+  top: 5px;
+  max-width: 100%;
+  right: 0;
+  left: 0;
+}
+
+.img-sec{
+   overflow: hidden;
+}
+
+.body-sec {
+  box-shadow: 0px 0px 3px 2px #dddddd;
+  margin: 1px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.label-bottom {
+  bottom: 40px;
+  max-width: 100%;
+    right: 0;
+    left: 0;
+  &.camera {
+    bottom: 5px;
+  }
+
+  .currency-1 {
+    float: left;
+    position: relative;
+    padding: 5px;
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 0;
+      right: -34px;
+      height: 0;
+      top: 0;
+      border-style: solid;
+      border-width: 17px 0 17px 34px;
+      border-color: transparent transparent transparent #01a3bb;
+    }
+
+  }
+
+  .currency-2 {
+    padding: 5px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: -34px;
+      content: '';
+      width: 0;
+      height: 0;
+      border-style: solid;
+      top: 0;
+      border-width: 17px 34px 17px 0;
+      border-color: transparent #01a3bb transparent transparent;
+    }
+  }
+
+}
+
+// .list-view{
+//   padding: 10px;
+//   border: solid 1px #f2f2f2;
+// }
+
+
+.listing-icon {
+  li {
+    display: inline-block;
+
+    img {
+      width: 22px;
+      margin-right: 5px;
+    }
+
+    span {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+
+  }
+}

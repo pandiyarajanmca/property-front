@@ -1,0 +1,141 @@
+@import "../../../variables.scss";
+@import "../../../mixins.scss";
+.main-sec{
+    background-image: url(/assets/images/banners/banner.jpg);
+    height: 100vh;
+    background-size: cover;
+    .inner-main{
+        h1{
+          color: #ffffff;  
+          font-family: "font-Walbaum";
+        }
+        p{
+          color: #ffffff; 
+        }
+        .search-sec{
+            margin: auto;
+            width: 40%;
+            .input-group{
+                .form-control{
+                    height: 45px;
+                    border-radius: 25px 0 0 25px;
+                    font-size: $f-14;
+                    padding: 0.375rem 1.75rem;
+                }
+                .btn-dlf{
+                    background:$primary-color;
+                    border-radius: 0 25px 25px 0;
+                    font-size: $f-12;
+                    padding: 0.375rem 1.75rem;
+                    color: #ffffff;
+                }
+            }
+            ul{
+                list-style: none;
+                margin:25px; padding: 0;
+                text-align: center;
+              
+                li{
+                    display: inline-block;
+                    padding: 8px;
+                    a{
+                        font-size: $f-12;
+                       padding: 0.6rem 1.75rem;
+                       color: #ffffff;
+                       width: 200px;
+                       border-radius: 25px;
+                       border: 1px solid #ffffff;
+                       text-decoration: none;
+                       display: inline-block;
+                    }
+                }
+            }
+        }
+        .soroll{
+            position: absolute;
+            bottom: -280px;
+            top: auto;
+            margin: auto;
+            height: 200px;
+            width: 100%;
+          left: 0;
+      
+        .pulsating-circle {
+            position: absolute;
+            left:0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+           
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            
+            &:before {
+              content: '';
+              position: absolute;
+              left:0;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              margin: auto;
+              display: block;
+              width: 100%;
+              height: 100%;
+              box-sizing: border-box;
+           
+              border-radius:100%;
+              background-color: rgba(255, 255, 255, 0.2);
+              animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            }
+            
+            &:after {
+              content: '';
+              position: absolute;
+              left: 0; 
+              top: auto;
+              bottom: 0;
+              display: block;
+              width: 100%;
+              height: 100%;
+            //   background-color: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.3);
+              border-radius: 100%;
+            //   box-shadow: 0 0 8px rgba(0,0,0,.3);
+              animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+            }
+            img{
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 15px;
+                margin: auto;
+            }
+          }
+          
+          @keyframes pulse-ring {
+            0% {
+              transform: scale(.33);
+            }
+            80%, 100% {
+              opacity: 0;
+            }
+          }
+          
+          @keyframes pulse-dot {
+            0% {
+              transform: scale(.8);
+            }
+            50% {
+              transform: scale(1);
+            }
+            100% {
+              transform: scale(.8);
+            }
+          }
+    }
+}
+    
+}

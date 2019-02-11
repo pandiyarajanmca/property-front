@@ -1,0 +1,157 @@
+<div class="container">
+  <div class="row mt-2">
+    <app-breadcrumbs></app-breadcrumbs>
+  </div>
+  <div class="row mt-3">
+    <h2>2 Bed | Damac Heights | Full Marina View</h2>
+  </div>
+  <div class="row mt-3">
+    <div class="col-8">
+      <div class="row d-block">
+        <app-gallery [propertyImages]='propertyImages'></app-gallery>
+      </div>
+      <div class="row mt-4">
+        <a class="common_btn mr-2" title=""> Express intrest <i class="fa ml-1  fa-angle-right"></i></a>
+        <a class="common_btn bg-dark" title=""> Add to Favourites <i class="fa ml-1  fa-star"></i> </a>
+      </div>
+      <div class="row mt-4 property-tab d-block">
+        <ngb-tabset>
+          <ngb-tab title="Description">
+            <ng-template ngbTabContent>
+              <p class="mt-3">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
+                aliqua, retro
+                synth
+                master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                retro keffiyeh
+                dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                salvia cillum
+                iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+            </ng-template>
+          </ngb-tab>
+
+          <ngb-tab title="Location">
+            <ng-template ngbTabContent>
+              <div class="col-12 mt-3">
+                <ngui-map center="Pune, India" zoom="14" style="min-height: 380px; max-height: 450px;"
+                  [fullscreenControl]="true" [scrollwheel]="true">
+                </ngui-map>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Details">
+            <ng-template ngbTabContent>
+              <div class="row mt-3">
+                <div class="col-6">
+                  <div class="row m-1">
+                    <span class="col-6 p-2">Price</span>
+                    <span class="col-6 p-2 text-info">2,390,000 AED</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row m-1 ">
+                    <span class="col-6 p-2">Bedrooms</span>
+                    <span class="col-6 p-2 text-info">2</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row m-1 bg-info">
+                    <span class="col-6 p-2">Type</span>
+                    <span class="col-6 p-2 text-info">Townhouse</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row m-1 bg-info">
+                    <span class="col-6 p-2">Bathrooms</span>
+                    <span class="col-6 p-2 text-info">2</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row m-1">
+                    <span class="col-6 p-2">Property Id</span>
+                    <span class="col-6 p-2 text-info">75681</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row m-1">
+                    <span class="col-6 p-2">Floor area (Sq.ft)</span>
+                    <span class="col-6 p-2 text-info">1 198,00 ft</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row m-1 bg-info">
+                    <span class="col-6 p-2">Kitchen</span>
+                    <span class="col-6 p-2 text-info">1 198,00 ft</span>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="row m-1 bg-info">
+                    <span class="col-6 p-2">Living</span>
+                    <span class="col-6 p-2 text-info">1 198,00 ft</span>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Features">
+            <ng-template ngbTabContent>
+              <div class="row mt-3">
+                <div class="col-4">
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Balcony</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Built in wardrobes</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Fully fitted kitchen</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Steam room</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Security</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Maintenance</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>City view</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Near supermarkets</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Near mall</li>
+                </div>
+                <div class="col-4">
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Public transportation</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Near restaurants</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Core &amp; Shell</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Shared Gym</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Basement parking</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Built in Kitchen Appliances</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Mosque</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>On mid floor</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Public parks</li>
+                </div>
+                <div class="col-4">
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Community view</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Storage room</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Shared swimming pool</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Public Park</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Terrace</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Private Jacuzzi</li>
+                  <li> <i class="fa fa-check mr-2 text-info"> </i>Core &amp; Shell</li>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+
+    </div>
+
+    <div class="col-4">
+      <div class="agent-profile  text-center border p-1">
+        <div class="text-center mt-3 mb-3">
+          <img src="assets/images/landing/user.png" class="img-circle">
+        </div>
+        <h4 class="text-info mt-2">Jamel Grant</h4>
+        <p>Nationwide Middle East Properties LLC</p>
+        <p class="text-info">#CN-1197386</p>
+        <div class="mt-1 mb-4">
+            <a class="border text-secondary p-2" href="mail-to:jamelgrant@gmail.com">
+              <i class="fa fa-envelope ml-1 mr-2"></i>    jamelgrant@gmail.com
+            </a>
+        </div>
+        <div class="mb-2">
+            <span class="m-auto rating-static rating-30"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

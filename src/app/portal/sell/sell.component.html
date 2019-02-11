@@ -1,0 +1,686 @@
+<app-header></app-header>
+<section class="container-fluid main-sec d-flex align-items-center">
+    <div class="col-12 text-center inner-main">
+        <h1>List your property with us in 5 simple steps.</h1>
+    </div>
+</section>
+<section class="container-fluid sell-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="leftside-links">
+                    <ul>
+                        <li>
+                            <span class="bar">
+                                <ngb-progressbar type="info" [value]="50" height="2.2rem"></ngb-progressbar>
+                            </span>
+                        </li>
+                        <li><a href=""><img src="assets/images/sell/basic.svg" /><span>Basic Details</span></a></li>
+                        <li><a href=""><img src="assets/images/sell/price.svg" /><span>Price & Text</span></a></li>
+                        <li><a href=""><img src="assets/images/sell/attachments.svg" /><span>Attachments</span></a></li>
+                        <li><a href=""><img src="assets/images/sell/contact.svg" /><span>Contact Setting</span></a></li>
+                        <li><a href=""><img src="assets/images/sell/publish.svg" /><span>Publish</span></a></li>
+
+                        {{step}}
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-10 mx-auto">
+                        <ng-container *ngIf="step == 1">
+                            <div class=" right-form pt-5 pb-5">
+                                <form [formGroup]="BasicDetailForm" (ngSubmit)="BasicDetailSubmit()">
+                                    <p>Info</p>
+                                    <div class="form-group">
+                                        <label for="text">Title*</label>
+                                        <input type="text" class="form-control" id="Title" name="Title" formControlName="Title"
+                                            placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Property Type*</label>
+                                        <select class="form-control" id="PropertyType" name="PropertyType"
+                                            formControlName="PropertyType">
+                                            <option value="0">Choose a property type</option>
+                                            <option value="1">Choose a property type</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Subcategory</label>
+                                        <select class="form-control" id="Subcategory" name="Subcategory"
+                                            formControlName="Subcategory">
+                                            <option value="0">Choose a subcategory</option>
+                                            <option value="1">Choose a subcategory</option>
+                                        </select>
+                                    </div>
+                                    <p>Pick loctaion</p>
+                                    <div class="form-group">
+                                        <label for="type">City*</label>
+                                        <textarea class="form-control" rows="5" id="City" name="City" formControlName="City">Dubai</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Area</label>
+                                        <select multiple class="form-control" id="Area" name="Area" formControlName="Area">
+                                            <option value="0">Abu hall</option>
+                                            <option value="1">Academic City</option>
+                                            <option value="2">Ad Daghayah</option>
+                                            <option value="3">Al Awir</option>
+                                            <option value="4">Al Bada</option>
+                                        </select>
+                                    </div>
+
+                                    <p>Address</p>
+                                    <div class="form-group">
+                                        <label for="text">Address(Street, Number etc.)</label>
+                                        <input type="text" class="form-control" id="Address" name="Address"
+                                            formControlName="Address" placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox"> Show Address to Website
+                                        </label>
+                                        <span class="add-div">Adjust map position +</span>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <button type="submit" class="btn btn-dlf float-right">Save & Continue with next
+                                            step</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="step == 2">
+                            <div class=" right-form pt-5 pb-5">
+                                <form [formGroup]="PriceTextForm" (ngSubmit)="PriceTextSubmit()">
+                                    <p>Price</p>
+
+
+                                    <div class="form-group">
+                                        <label for="type">Accepted Currency</label>
+                                        <select class="form-control" id="AcceptedCurrency" name="AcceptedCurrency"
+                                            formControlName="AcceptedCurrency">
+                                            <option value="0">Please Choose</option>
+                                            <option value="1">Please Choose</option>
+                                        </select>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 pr-2">
+                                            <div class="form-group">
+                                                <label for="text">Price in USD</label>
+                                                <input type="text" class="form-control" id="PriceInUSD" name="PriceInUSD"
+                                                    formControlName="PriceInUSD" placeholder="Enter here">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pl-2">
+                                            <div class="form-group">
+                                                <label for="text">Price in ETH</label>
+                                                <input type="text" class="form-control" id="PriceInETH" name="PriceInETH"
+                                                    formControlName="PriceInETH" placeholder="Enter here">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox"> Price not available
+                                        </label>
+                                    </div>
+                                    <p>Property Details</p>
+                                    <div class="form-group">
+                                        <label for="text">Bedrooms</label>
+                                        <input type="text" class="form-control" id="Bedrooms" name="Bedrooms"
+                                            formControlName="Bedrooms" placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Baths</label>
+                                        <input type="text" class="form-control" id="Baths" name="Baths" formControlName="Baths"
+                                            placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Rooms(total)</label>
+                                        <input type="text" class="form-control" id="Rooms" name="Rooms" formControlName="Rooms"
+                                            placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Living area(m<sup>2</sup>)</label>
+                                        <input type="text" class="form-control" id="LivingArea" name="LivingArea"
+                                            formControlName="LivingArea" placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Floor</label>
+                                        <input type="text" class="form-control" id="Floor" name="Floor" formControlName="Floor"
+                                            placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Total Floor</label>
+                                        <input type="text" class="form-control" id="TotalFloor" name="TotalFloor"
+                                            formControlName="TotalFloor" placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Available from</label>
+                                        <input type="text" class="form-control" id="AvailableFrom" name="AvailableFrom"
+                                            formControlName="AvailableFrom" placeholder="Enter here">
+                                    </div>
+                                    <p>Description</p>
+                                    <div class="form-group">
+                                        <label for="type">Description of the property*</label>
+                                        <textarea class="form-control" rows="5" id="Description" name="Description"
+                                            formControlName="Description">Enter here</textarea>
+                                    </div>
+                                    <p>More property details</p>
+                                    <div class="form-group">
+                                        <label for="text">Build(Year)</label>
+                                        <input type="text" class="form-control" id="Build" name="Build" formControlName="Build"
+                                            placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="text">Car Spaces</label>
+                                        <input type="text" class="form-control" id="CarSpaces" name="CarSpaces"
+                                            formControlName="CarSpaces" placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Furnished</label>
+                                        <select class="form-control" id="Furnished" name="Furnished" formControlName="Furnished">
+                                            <option value="0">Please Choose</option>
+                                            <option value="1">Please Choose</option>
+                                            <option value="2">Please Choose</option>
+                                            <option value="3">Please Choose</option>
+                                            <option value="4">Please Choose</option>
+                                        </select>
+                                    </div>
+                                    <p>More property features</p>
+                                    <ngb-accordion #acc="ngbAccordion">
+                                        <ngb-panel id="toggle-1" title="Indoor features">
+                                            <ng-template ngbPanelContent>
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </ngb-panel>
+                                        <ngb-panel id="toggle-2" title="Eco features">
+                                            <ng-template ngbPanelContent>
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </ngb-panel>
+                                        <ngb-panel id="toggle-3" title="Other features">
+                                            <ng-template ngbPanelContent>
+                                                <div class="col-12">
+                                                    <div class="row">
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Alarm
+                                                                System
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Intercom
+                                                            </label>
+                                                        </div>
+                                                        <div class="form-check col-sm-4">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" value="">Ensuite
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ng-template>
+                                        </ngb-panel>
+                                    </ngb-accordion>
+                                    <div formArrayName="propertyImage">
+                                            <div class="profile_img ">
+                                                    <span (click)="open(content)">
+                                                        <img class="img_profile" (click)="imgInput.click()" [src]="croppedImage || 'assets/images/s1.png'" />
+                                                        <input type="file" class="form-control form_input form_input1 mx-auto" id="img1"
+                                                            name="img1" formControlName="img1" style="display: none" (change)="fileChangeEvent($event)"
+                                                            #imgInput />
+                                                    </span>
+                                                </div>
+                                                <div class="profile_img ">
+                                                        <span (click)="open(content)">
+                                                            <img class="img_profile" (click)="imgInput.click()" [src]="croppedImage || 'assets/images/s1.png'" />
+                                                            <input type="file" class="form-control form_input form_input1 mx-auto" id="img2"
+                                                                name="img2" formControlName="img2" style="display: none" (change)="fileChangeEvent($event)"
+                                                                #imgInput />
+                                                        </span>
+                                                    </div>
+                                    </div>
+                                   
+                                    <div class="form-group ">
+                                        <button type="submit" class="btn btn-gary float-left" (click)="step = step-1;">Back
+                                        </button>
+                                        <button type="submit" class="btn btn-dlf float-right">Save & Continue with next
+                                            step</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="step == 3">
+                            <div class=" right-form pt-5 pb-5">
+                                <form [formGroup]="BasicDetailForm" (ngSubmit)="BasicDetailSubmit()">
+                                    <p>Info</p>
+                                    <div class="form-group">
+                                        <label for="text">Title*</label>
+                                        <input type="text" class="form-control" id="Title" name="Title" formControlName="Title"
+                                            placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Property Type*</label>
+                                        <select class="form-control" id="PropertyType" name="PropertyType"
+                                            formControlName="PropertyType">
+                                            <option value="0">Choose a property type</option>
+                                            <option value="1">Choose a property type</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Subcategory</label>
+                                        <select class="form-control" id="Subcategory" name="Subcategory"
+                                            formControlName="Subcategory">
+                                            <option value="0">Choose a subcategory</option>
+                                            <option value="1">Choose a subcategory</option>
+                                        </select>
+                                    </div>
+                                    <p>Pick loctaion</p>
+                                    <div class="form-group">
+                                        <label for="type">City*</label>
+                                        <textarea class="form-control" rows="5" id="City" name="City" formControlName="City">Dubai</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">Area</label>
+                                        <select multiple class="form-control" id="Area" name="Area" formControlName="Area">
+                                            <option value="0">Abu hall</option>
+                                            <option value="1">Academic City</option>
+                                            <option value="2">Ad Daghayah</option>
+                                            <option value="3">Al Awir</option>
+                                            <option value="4">Al Bada</option>
+                                        </select>
+                                    </div>
+
+                                    <p>Address</p>
+                                    <div class="form-group">
+                                        <label for="text">Address(Street, Number etc.)</label>
+                                        <input type="text" class="form-control" id="Address" name="Address"
+                                            formControlName="Address" placeholder="Enter here">
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox"> Show Address to Website
+                                        </label>
+                                        <span class="add-div">Adjust map position +</span>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <button type="submit" class="btn btn-dlf float-right">Save & Continue with next
+                                            step</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+
+    </div>
+    <div class="modal-body">
+        <div>
+            <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 4"
+                [resizeToWidth]="160" [roundCropper]="false" format="png" outputType="both" (imageCropped)="imageCropped($event)"
+                (imageLoaded)="imageLoaded()" (loadImageFailed)="loadImageFailed()" style="max-height: 33vh"
+                data-result="imageCropResult"></image-cropper>
+        </div>
+        <span (click)="imgInput.click()">Chnage Image</span>
+        <input type="file" class="form-control form_input form_input1 mx-auto" id="img" name="img" formControlName="img"
+            style="display: none" (change)="fileChangeEvent($event)" #imgInput />
+        <!-- <div class="col-sm-12 mt-5">
+                        <div class="upload">
+                          <input type="file" class="form-control form_input mx-auto" (change)="fileChangeEvent($event)" />
+                          <img class="img_profile" [src]="croppedImage || 'assets/images/s1.png'" />
+                        </div>
+                        <img [src]="croppedImage" /> 
+                      </div> -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</ng-template>

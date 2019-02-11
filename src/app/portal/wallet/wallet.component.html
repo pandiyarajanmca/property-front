@@ -1,0 +1,170 @@
+<app-header></app-header>
+<section class="container-fluid main-sec d-flex align-items-center">
+    <!-- <div class="col-12 text-center inner-main">
+        <h1>List your property with us in 5 simple steps.</h1>
+    </div> -->
+</section>
+<section class="container-fluid sell-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="leftside-links">
+                    <ul>
+                        <li><a  routerLink="/wallet-details"><img src="assets/images/landing/wallet.svg" /><span>Wallet Details</span></a></li>
+                        <li><a routerLink="/wallet-withdraw"><img src="assets/images/sell/price.svg" /><span>Withdraw</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-11 pt-5 pb-1 wallet_info_blk mx-auto">
+                       <h1 class="wallet_title" >My Wallet</h1>
+                       <div class="col-sm-12 p-0">
+                         <div class="wall_balance">
+                           <h5>Total Balance</h5>
+                           <span>260.00 USD</span>
+                           <span class="sign_sp pl-3 pr-3">=</span>
+                         </div>
+                         <div class="wall_balance">
+                          <h5>BTC</h5>
+                          <span>0.076 BTC</span>
+                          <span class="sign_sp pl-3 pr-3">+</span>
+                         </div>
+                         <div class="wall_balance">
+                          <h5>ETH</h5>
+                          <span>2.49 ETH</span>
+                         </div>
+                       </div>
+                       <div class="col-sm-12 mt-4 mb-4 p-0">
+                        <div class="form-group">
+                          <label for="type">Wallet Type</label>
+                          <select class="form-control" id="PropertyType" name="PropertyType">
+                              <option value="0">Choose a currency</option>
+                              <option value="1">USD</option>
+                          </select>
+                      </div>
+                       </div>
+                       <div class="col-sm-12 wallet-tbl mt-2 mb-5 p-0">
+                        <!-- <div class="col-sm-12 payment-history-blk"> -->
+                          <div class="table-responsive ">
+                            <table class="table table-borderless table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Address</th>
+                                  <th>Balance (BTC)</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr class="tbl_bg">
+                                  <td class=" wallet_addr">
+                                    <span>{{'0x68e812d42269d11ab4b377bb85410a27524f2457' | slice:0:20 }}...</span>
+                                    <img ngxClipboard (cbOnSuccess)="copied($event)"
+                                      [cbContent]="'0x68e812d42269d11ab4b377bb85410a27524f2457'" class="refresh_icon" src="assets/images/copy.svg"
+                                      alt="copy" title="0x68e812d42269d11ab4b377bb85410a27524f2457" />
+                                    <a class="ethar-scan-link" target="_blank" href="" title="Etharscan">
+                                      <img src="assets/images/link.svg" />
+                                    </a>
+                                  </td>
+                                  <td>86.56 BTC</td>
+                                </tr>
+                              </tbody>
+
+                            </table>
+                          </div>
+                        <!-- </div> -->
+                       </div>
+                       <h2 class="wallet_title mt-3" >Transaction History</h2>
+                       <div class="col-sm-12 mt-4 mb-4 p-0">
+                        <div class="form-group">
+                          <label for="type">Wallet Type</label>
+                          <select class="form-control" id="PropertyType" name="PropertyType">
+                              <option value="0">Choose a currency</option>
+                              <option value="1">USD</option>
+                          </select>
+                      </div>
+                       </div>
+                       <div class="col-sm-12 wallet-tbl mt-2  p-0">
+                        <!-- <div class="col-sm-12 payment-history-blk"> -->
+                          <div class="table-responsive ">
+                            <table class="table table-borderless table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Action</th>
+                                  <th>Amount</th>
+                                  <th>Transaction ID</th>
+                                  <th>Date</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Deposite</td>
+                                  <td>89.06 BTC</td>
+                                  <td class=" ecrow_addr">
+                                    <span>{{'0x68e812d42269d11ab4b377bb85410a27524f2457' | slice:0:15 }}...</span>
+                                    <img ngxClipboard (cbOnSuccess)="copied($event)"
+                                      [cbContent]="'0x68e812d42269d11ab4b377bb85410a27524f2457'" class="refresh_icon" src="assets/images/copy.svg"
+                                      alt="copy" title="0x68e812d42269d11ab4b377bb85410a27524f2457" />
+                                    <a class="ethar-scan-link" target="_blank" href="" title="Etharscan">
+                                      <img src="assets/images/link.svg" />
+                                    </a>
+                                  </td>
+                                  <td>31/12/2018 17:56</td>
+                                  <td>Success</td>
+                                </tr>
+                                <tr>
+                                  <td>Withdraw</td>
+                                  <td>115.06 BTC</td>
+                                  <td class=" ecrow_addr">
+                                    <span>{{'0x68e812d42269d11ab4b377bb85410a27524f2457' | slice:0:15 }}...</span>
+                                    <img ngxClipboard (cbOnSuccess)="copied($event)"
+                                      [cbContent]="'0x68e812d42269d11ab4b377bb85410a27524f2457'" class="refresh_icon" src="assets/images/copy.svg"
+                                      alt="copy" title="0x68e812d42269d11ab4b377bb85410a27524f2457" />
+                                    <a class="ethar-scan-link" target="_blank" href="" title="Etharscan">
+                                      <img src="assets/images/link.svg" />
+                                    </a>
+                                  </td>
+                                  <td>31/12/2018 17:56</td>
+                                  <td>Pending</td>
+                                </tr>
+                                <tr>
+                                  <td>Deposite</td>
+                                  <td>89.06 BTC</td>
+                                  <td class=" ecrow_addr">
+                                    <span>{{'0x68e812d42269d11ab4b377bb85410a27524f2457' | slice:0:15 }}...</span>
+                                    <img ngxClipboard (cbOnSuccess)="copied($event)"
+                                      [cbContent]="'0x68e812d42269d11ab4b377bb85410a27524f2457'" class="refresh_icon" src="assets/images/copy.svg"
+                                      alt="copy" title="0x68e812d42269d11ab4b377bb85410a27524f2457" />
+                                    <a class="ethar-scan-link" target="_blank" href="" title="Etharscan">
+                                      <img src="assets/images/link.svg" />
+                                    </a>
+                                  </td>
+                                  <td>31/12/2018 17:56</td>
+                                  <td>Success</td>
+                                </tr>
+                                <tr>
+                                  <td>Withdraw</td>
+                                  <td>31.25 BTC</td>
+                                  <td class="ecrow_addr">
+                                    <span>{{'0x68e812d42269d11ab4b377bb85410a27524f2457' | slice:0:15 }}...</span>
+                                    <img ngxClipboard (cbOnSuccess)="copied($event)"  [cbContent]="'0x68e812d42269d11ab4b377bb85410a27524f2457'" class="refresh_icon" src="assets/images/copy.svg"
+                                    alt="copy" title="0x68e812d42269d11ab4b377bb85410a27524f2457" />
+                                    <a class="ethar-scan-link" target="_blank" href="" title="Etharscan"> <img src="assets/images/link.svg" /> </a>
+                                  </td>
+                                  <td>31/12/2018 19:25</td>
+                                  <td>Pending</td>
+                                </tr>
+                              </tbody>
+
+                            </table>
+                          </div>
+                        <!-- </div> -->
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

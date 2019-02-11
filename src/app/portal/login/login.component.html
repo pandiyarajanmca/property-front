@@ -1,0 +1,89 @@
+<!-- <a  class="common_btn" (click)="submitSelection(loginSignupModal)"  title="Submit Application">Submit Application</a>
+
+<ng-template #loginSignupModal let-modal>
+  <div class="login_modal ">
+  <div class="modal-body"> -->
+    <div class="col-sm-12  login_modal_form">
+        <ngb-tabset  #t="ngbTabset" [activeId]="idd" >
+            <ngb-tab title="Login" id="login_tab" >
+              <ng-template ngbTabContent>
+                  <form [formGroup] = 'loginForm' (ngSubmit) = "login(loginForm.value)">
+                      <div class="form-group mt-4 mb-4 ">
+                          <input type="text" class="form-control" id="userId" placeholder="Mobile or Email ID" formControlName="userId" name="userId"
+                            required />
+                        </div>
+                      <div class="form-group mt-4 mb-4 ">
+                          <input type="email" class="form-control" id="password" placeholder="Password" formControlName="password" name="password"
+                            required />
+                        </div>
+                        <div class="form-group  checkbox-blk mt-4 mb-4 ">
+                            <label class="form_checkbox">
+                              Remember Me
+                              <input type="checkbox" id="remember" name="remember" formControlName='remember' value="1"
+                                required />
+                              <span class="checkmark"></span>
+                            </label>
+                            <span class="forgot_label">Forgot Password</span>
+                          </div>
+                          <div class="bottom_payment text-left">
+                              <button type="submit" class="common_btn">
+                               LOGIN
+                              </button>
+                            </div>
+                  </form>
+                  <div class="col-sm-12 pt-4 pb-4">
+                     <div class="or_line"> <span>OR</span>  </div>
+                  </div>
+                  <div class="col-sm-12  pb-4">
+                     <a class="social_login_btn face_color mt-2 mb-3"> Login with Facebook</a>
+                     <a class="social_login_btn google_color mt-3 mb-2"> Login with Google</a>
+                  </div>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Signup" id="sign_tab" >
+              <ng-template ngbTabContent>
+                  <form [formGroup] = 'signupForm' (ngSubmit) = "signup(signupForm.value)">
+                      <div class="form-group mt-4 mb-4 ">
+                          <input type="text" class="form-control" id="name" placeholder="Username" formControlName="name" name="name"
+                            required />
+                        </div>
+                      <div class="form-group mt-4 mb-4 ">
+                          <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" name="email"
+                            required />
+                        </div>
+                      <div class="form-group mt-4 mb-4 ">
+                          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password" name="password"
+                            required />
+                        </div>
+                      <div class="form-group mt-4 mb-4 ">
+                          <input type="password" class="form-control" id="confirmPassword" placeholder="Retype Password" formControlName="confirmPassword" name="confirmPassword"
+                            required />
+                        </div>
+                        <div class="form-group  checkbox-blk mt-4 mb-4 ">
+                            <label class="form_checkbox">
+                              I agree with terms & Conditions
+                              <input type="checkbox" id="agree" name="agree" formControlName='agree' value="1"
+                                required />
+                              <span class="checkmark"></span>
+                            </label>
+                          </div>
+                          <div class="bottom_payment text-left">
+                              <button type="submit" class="common_btn">
+                               REGISTER
+                              </button>
+                            </div>
+                  </form>
+                  <div class="back_log">
+                      <a  (click)="t.select('login_tab')"> <img src="/assets/images/left-arrow.png"> Back to login</a>
+                  </div>
+              </ng-template>
+            </ngb-tab>
+            </ngb-tabset>
+
+
+
+    </div>
+  <!-- </div>
+  </div>
+</ng-template> -->
+

@@ -1,0 +1,12 @@
+
+@import "./../../../mixins.scss";
+.agent-profile {
+  img{
+    max-width: 180px;
+  }
+  a.border{
+    @include border-radius(25px);
+  }
+
+
+}

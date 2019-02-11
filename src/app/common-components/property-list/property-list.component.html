@@ -1,0 +1,42 @@
+<div class="row">
+  <div *ngFor="let property of propertiesList" class="col-4 mt-4" [class]="listView?'col-12 mt-4 list-view':'col-4 mt-4'">
+    <div class="card border-0" [class]="listView?'card p-2':'card border-0'">
+      <a href="/buy/{{property?.uuid}}" class="text-dark" [class]="listView?'row m-0 text-dark':'text-dark'">
+
+        <div class="position-relative img-sec" [class]="listView?'col-3 p-0 img-sec position-relative':'position-relative'">
+          <img src="assets/images/property/property-1.png" class="card-img-top" alt="">
+          <div class="label-top position-absolute w-100 p-2 text-light">
+            <small class="badge badge-success" *ngIf="!property?.isVerified"> <i class="fa fa-check"></i> VERIFIED</small>
+
+            <small class="mr-1 text-warning"><a href="" class="text-light pull-right"><i class="fa fa-star"></i></a></small>
+            <br>
+            <small class="badge badge-danger" *ngIf="!property?.isVerified"> Accepts BTC </small>
+          </div>
+          <div class="label-bottom w-100 position-absolute">
+            <span class="currency-1  badge-info">45000 AED</span>
+            <span class="currency-2 pull-right badge-info">2.530 BTC</span>
+          </div>
+          <div class="label-bottom  camera w-100 position-absolute pr-2">
+            <span class="text-warning d-block w-100 text-right ">
+              <a href="" class="text-light"><i class="fa fa-camera"></i> <b> 2 </b></a>
+            </span>
+          </div>
+        </div>
+        <div class="card-body body-sec p-2 pb-0" [class]="listView?'col-9 p-2 pb-0':'card-body body-sec p-2 pb-0'">
+          <h6 class="card-title">{{property?.numberOfBedrooms}}
+            {{(property.propertyType==='RESIDENTIAL')?'BHK':'Comercial place'}} </h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+            card's content.</p>
+          <ul class="pl-0  mb-0 listing-icon d-flex align-items-end ">
+            <li class="col-6 pl-0"><img src="assets/images/icons/bedroom.png" /><span>{{property?.numberOfBedrooms}}
+              </span>
+              <img src="assets/images/icons/bathroom.png" /><span>{{property?.numberOfBathrooms}}</span>
+              <img src="assets/images/icons/parking-icon.png" /><span>{{property.isParkingAvailable?'YES': 'NO'}}</span></li>
+            <li class="col-6 pr-0 text-right"><img src="assets/images/icons/square.png" /><span>{{property?.livingArea}}
+                Sqft </span></li>
+          </ul>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<app-header></app-header>
+<section class="container-fluid main-sec d-flex align-items-center">
+    <!-- <div class="col-12 text-center inner-main">
+        <h1>List your property with us in 5 simple steps.</h1>
+    </div> -->
+</section>
+<section class="container-fluid sell-sec">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="leftside-links">
+                    <ul>
+                        <li><a routerLink="/wallet-details"><img src="assets/images/landing/wallet.svg" /><span>Wallet Details</span></a></li>
+                        <li><a routerLink="/wallet-withdraw"><img src="assets/images/sell/price.svg" /><span>Withdraw</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-10 pt-5 pb-1 wallet_info_blk mx-auto">
+                       <h1 class="wallet_title" >Withdraw</h1>
+                       <div class="col-sm-12 p-0">
+                        <div class=" right-form ">
+                          <form [formGroup]="widthdrawForm" (ngSubmit)="withdrawDetailSubmit(widthdrawForm.value)">
+                              <div class="form-group">
+                                  <label for="text">To*</label>
+                                  <input type="text" class="form-control" id="withdrwTo" name="withdrwTo" formControlName="withdrwTo"
+                                      placeholder="Enter Email ID">
+                              </div>
+                              <div class="form-group">
+                                  <label for="type">Currency Type*</label>
+                                  <select class="form-control" id="currencyType" name="currencyType"
+                                      formControlName="currencyType">
+                                      <option selected value="0">Choose Currency type</option>
+                                      <option value="BTC">BTC</option>
+                                      <option value="ETH">ETH</option>
+                                  </select>
+                              </div>
+                              <div class="row form-group">
+                                  <label class="col-12" for="type">Amount*</label>
+                                  <div class="col-5 col-sm-4">
+                                    <input type="text" class="form-control" id="amount" name="amount" formControlName="amount"
+                                      placeholder="Enter Amount">
+                                  </div>
+                                  <div class="col-7 col-sm-4 pl-0">
+                                    <span  class="avb_bok">10.6015 BTC Available</span>
+                                  </div>
+                                  <span class="usd_amt mt-2 col-12">00.00 USD</span>
+
+                              </div>
+
+                              <div class="form-group">
+                                  <label for="text">Password*</label>
+                                  <input type="text" class="form-control" id="password" name="password"
+                                      formControlName="password" placeholder="Enter Password">
+                              </div>
+
+                              <div class="form-group ">
+                                  <button type="submit" class="common_btn">Submit</button>
+                              </div>
+
+                          </form>
+                      </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>
